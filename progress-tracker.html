@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="css/progress-tracker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Progress Tracker</h1>
+        
+        <div class="plan-controls">
+            <button id="generate-diet-plan" class="btn">Generate Diet Plan</button>
+            <button id="generate-training-plan" class="btn">Generate Training Plan</button>
+        </div>
+        
+        <div id="plans-container" class="plans-grid"></div>
+
+        <div class="progress-section">
+            <h2>Weekly Progress</h2>
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar"></div>
+                <span id="progressText">0% Complete</span>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="workoutChart"></canvas>
+            <canvas id="nutritionChart"></canvas>
+            <canvas id="trendChart"></canvas>
+        </div>
+
+        <form id="progressForm" class="progress-form">
+            <h2>Log Today's Progress</h2>
+            <div class="form-group">
+                <label for="workoutMinutes">Workout Minutes:</label>
+                <input type="number" id="workoutMinutes" min="0" max="240">
+            </div>
+            <div class="form-group">
+                <label for="waterGlasses">Water Glasses:</label>
+                <input type="number" id="waterGlasses" min="0" max="20">
+            </div>
+            <div class="form-group">
+                <label for="currentWeight">Current Weight (kg):</label>
+                <input type="number" step="0.1" id="currentWeight">
+            </div>
+            <button type="submit" class="btn">Save Progress</button>
+        </form>
+
+        <button id="settings-btn" class="btn settings-btn">
+            <i class="fas fa-cog"></i> Settings
+        </button>
+    </div>
+
+    <script src="js/progress-tracker-enhanced.js"></script>
+</body>
+</html>

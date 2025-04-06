@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Planner</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        <h1>Personalized Diet Planner</h1>
+        
+        <form id="dietForm">
+            <div class="form-group">
+                <label for="dietType">Diet Type:</label>
+                <select id="dietType" required>
+                    <option value="">Select</option>
+                    <option value="balanced">Balanced</option>
+                    <option value="keto">Keto</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="low-carb">Low Carb</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="calories">Daily Calorie Goal:</label>
+                <input type="number" id="calories" min="1000" max="5000" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Meals per Day:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="meals" value="3" required> 3 Meals</label>
+                    <label><input type="radio" name="meals" value="4"> 4 Meals</label>
+                    <label><input type="radio" name="meals" value="5"> 5 Meals</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="allergies">Allergies/Dietary Restrictions:</label>
+                <textarea id="allergies" rows="2"></textarea>
+            </div>
+            
+            <button type="submit" id="generateDietBtn">Generate Meal Plan</button>
+        </form>
+        
+        <div id="dietLoading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Generating your personalized meal plan...</p>
+        </div>
+        
+        <div id="dietResults" class="results hidden">
+            <h2>Your Meal Plan</h2>
+            <div id="mealPlanContent"></div>
+            <div id="nutritionInfo"></div>
+        </div>
+    </div>
+
+    <script src="js/diet-planner.js"></script>
+</body>
+</html>

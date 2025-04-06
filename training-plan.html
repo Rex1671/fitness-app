@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Plan Generator</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        <h1>Personalized Training Plan Generator</h1>
+        
+        <form id="trainingForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" min="12" max="100" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="sport">Primary Sport/Activity</label>
+                <input type="text" id="sport" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Fitness Level</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="fitnessLevel" value="Beginner" required> Beginner</label>
+                    <label><input type="radio" name="fitnessLevel" value="Intermediate"> Intermediate</label>
+                    <label><input type="radio" name="fitnessLevel" value="Advanced"> Advanced</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="goals">Training Goals</label>
+                <textarea id="goals" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="injury">Injury History (if any)</label>
+                <input type="text" id="injury">
+            </div>
+            
+            <div class="form-group">
+                <label for="days">Available Training Days per Week</label>
+                <input type="number" id="days" min="1" max="7" required>
+            </div>
+            
+            <button type="submit" id="generateBtn" class="btn">Generate Training Plan</button>
+        </form>
+        
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Generating your personalized training plan...</p>
+        </div>
+        
+        <div id="results" class="results hidden">
+            <h2>Your Personalized Training Plan</h2>
+            <div id="planContent"></div>
+        </div>
+    </div>
+
+    <script src="js/training-plan.min.js"></script>
+</body>
+</html>
